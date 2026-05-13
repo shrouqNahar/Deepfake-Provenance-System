@@ -1,0 +1,95 @@
+=== Starting Unified Social IoT Provenance Pipeline ===
+
+Using device: cuda
+Checking/Generating metadata...
+Metadata generated for 0 images
+
+1. Running Provenance Survivability Analysis...
+Evaluating provenance survivability (3 transformations, 5 runs)...
+   run  survival_rate_%  n_transforms
+0    0            47.36             3
+1    1            48.09             3
+2    2            46.46             3
+3    3            47.36             3
+4    4            47.81             3
+Average Survivability Rate: 47.42%
+
+
+2. Running Ablation Study on Penalty Values...
+Penalty miss=0.05, forge=0.25 → AUC Det: 0.4562 | Hyb: 0.4620 | Gain: 0.0058
+Penalty miss=0.05, forge=0.3 → AUC Det: 0.4562 | Hyb: 0.4620 | Gain: 0.0058
+Penalty miss=0.05, forge=0.35 → AUC Det: 0.4562 | Hyb: 0.4620 | Gain: 0.0058
+Penalty miss=0.05, forge=0.4 → AUC Det: 0.4562 | Hyb: 0.4620 | Gain: 0.0058
+Penalty miss=0.05, forge=0.45 → AUC Det: 0.4562 | Hyb: 0.4620 | Gain: 0.0058
+Penalty miss=0.1, forge=0.25 → AUC Det: 0.4562 | Hyb: 0.4622 | Gain: 0.0060
+Penalty miss=0.1, forge=0.3 → AUC Det: 0.4562 | Hyb: 0.4622 | Gain: 0.0060
+Penalty miss=0.1, forge=0.35 → AUC Det: 0.4562 | Hyb: 0.4622 | Gain: 0.0060
+Penalty miss=0.1, forge=0.4 → AUC Det: 0.4562 | Hyb: 0.4622 | Gain: 0.0060
+Penalty miss=0.1, forge=0.45 → AUC Det: 0.4562 | Hyb: 0.4622 | Gain: 0.0060
+Penalty miss=0.15, forge=0.25 → AUC Det: 0.4562 | Hyb: 0.4624 | Gain: 0.0062
+Penalty miss=0.15, forge=0.3 → AUC Det: 0.4562 | Hyb: 0.4624 | Gain: 0.0062
+Penalty miss=0.15, forge=0.35 → AUC Det: 0.4562 | Hyb: 0.4624 | Gain: 0.0062
+Penalty miss=0.15, forge=0.4 → AUC Det: 0.4562 | Hyb: 0.4624 | Gain: 0.0062
+Penalty miss=0.15, forge=0.45 → AUC Det: 0.4562 | Hyb: 0.4624 | Gain: 0.0062
+Penalty miss=0.2, forge=0.25 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0063
+Penalty miss=0.2, forge=0.3 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0063
+Penalty miss=0.2, forge=0.35 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0063
+Penalty miss=0.2, forge=0.4 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0063
+Penalty miss=0.2, forge=0.45 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0063
+Penalty miss=0.25, forge=0.25 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0064
+Penalty miss=0.25, forge=0.3 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0064
+Penalty miss=0.25, forge=0.35 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0064
+Penalty miss=0.25, forge=0.4 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0064
+Penalty miss=0.25, forge=0.45 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0064
+
+Ablation Summary (mean across penalties):
+                                AUC_detection  AUC_hybrid      Gain
+penalty_missing penalty_forged                                     
+0.05            0.25                 0.456176    0.462002  0.005825
+                0.30                 0.456176    0.462002  0.005825
+                0.35                 0.456176    0.462002  0.005825
+                0.40                 0.456176    0.462002  0.005825
+                0.45                 0.456176    0.462002  0.005825
+0.10            0.25                 0.456176    0.462217  0.006041
+                0.30                 0.456176    0.462217  0.006041
+                0.35                 0.456176    0.462217  0.006041
+                0.40                 0.456176    0.462217  0.006041
+                0.45                 0.456176    0.462217  0.006041
+0.15            0.25                 0.456176    0.462384  0.006208
+                0.30                 0.456176    0.462384  0.006208
+                0.35                 0.456176    0.462384  0.006208
+                0.40                 0.456176    0.462384  0.006208
+                0.45                 0.456176    0.462384  0.006208
+0.20            0.25                 0.456176    0.462489  0.006312
+                0.30                 0.456176    0.462489  0.006312
+                0.35                 0.456176    0.462489  0.006312
+                0.40                 0.456176    0.462489  0.006312
+                0.45                 0.456176    0.462489  0.006312
+0.25            0.25                 0.456176    0.462537  0.006361
+                0.30                 0.456176    0.462537  0.006361
+                0.35                 0.456176    0.462537  0.006361
+                0.40                 0.456176    0.462537  0.006361
+                0.45                 0.456176    0.462537  0.006361
+
+3. Computational Overhead Analysis
+Inference time: 12.51 ms per image
+Std: 1.94 ms
+Model parameters: 4.01 M
+
+4. Privacy Analysis
+Current metadata schema exposes:
+• Perceptual hash (image fingerprint)
+Recommendation: Add encryption + avoid linking to user identity.
+
+=== PIPELINE COMPLETED SUCCESSFULLY ===
+Generated files ready for Chapter 5:
+provenance_survivability.csv
+ablation_results.csv
+
+You can now create tables for:
+- Provenance Survivability under Social IoT Transformations
+- Ablation Study: Penalty Sensitivity Analysis
+- Computational Overhead
+- Hybrid vs Detection-only Performance
+
+Ready for writing Results & Analysis section.
