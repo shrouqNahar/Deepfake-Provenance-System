@@ -17,9 +17,9 @@ Designed to withstand the noise and metadata manipulation typical of Social Inte
 - [Datasets](#datasets)
 - [Training & Evaluation](#training--evaluation)
 - [Advanced Analyses](#advanced-analyses)
-  - [Provenance Survivability](#provenance-survivability)
-  - [Ablation Study (Penalty Sensitivity)](#ablation-study-penalty-sensitivity)
-  - [Computational Overhead](#computational-overhead)
+  [Provenance Survivability](#provenance-survivability)
+  [Ablation Study (Penalty Sensitivity)](#ablation-study-penalty-sensitivity)
+  [Computational Overhead](#computational-overhead)
 - [Results](#results)
 - [Contributing](#contributing)
 - [License](#license)
@@ -28,28 +28,28 @@ Designed to withstand the noise and metadata manipulation typical of Social Inte
 ---
 
 ## Overview
-Deepfake detection models often fail when images undergo **lossy transformations** (resizing, compression, blurring) or when their **metadata is tampered with or removed** – common in social media and IoT sharing.
+Deepfake detection models often fail when images undergo lossy transformations (resizing, compression, blurring) or when their metadata is tampered with or removed – common in social media and IoT sharing.
 
-This project proposes a **hybrid scoring system**:
-1. A fine‑tuned **EfficientNet‑B0** model provides a base deepfake probability.
-2. **Provenance metadata** (SHA‑256 hash, perceptual hash) is checked for each image.  
-   - **Missing** metadata → +15% penalty  
-   - **Forged** metadata → +35% penalty  
-3. The final **hybrid score** is clipped to [0, 1] and thresholded at 0.5.
+This project proposes a hybrid scoring system**:
+1. A fine‑tuned EfficientNet‑B0** model provides a base deepfake probability.
+2. Provenance metadata** (SHA‑256 hash, perceptual hash) is checked for each image.  
+    Missing** metadata → +15% penalty  
+    Forged** metadata → +35% penalty  
+3. The final hybrid score is clipped to [0, 1] and thresholded at 0.5.
 
 The pipeline also simulates **provenance attacks** on the test set, evaluates survivability of perceptual hashes under Social IoT transformations, and performs a sensitivity analysis of penalty values.
 
 ---
 
 ## Key Features
--  **Deepfake classification** using EfficientNet‑B0 (transfer learning from ImageNet)
--  **Provenance generation & verification** with SHA‑256 and perceptual hashing (pHash)
--  **Automatic dataset splitting** (train/val/test = 70/15/15) for datasets lacking predefined splits
--  **Simulated provenance attacks**: metadata removal (20%) and forgery (10%) on the test set
--  **Hybrid scoring** that adjusts model predictions based on metadata integrity
--  **Comprehensive analysis**: ROC/PR curves, confusion matrix, survival rates, ablation study
--  **Computational overhead** measurement (inference time, parameter count)
--  **Modular, clean codebase** – easy to extend and reuse
+-  Deepfake classification** using EfficientNet‑B0 (transfer learning from ImageNet)
+-  Provenance generation & verification** with SHA‑256 and perceptual hashing (pHash)
+-  Automatic dataset splitting** (train/val/test = 70/15/15) for datasets lacking predefined splits
+-  Simulated provenance attacks**: metadata removal (20%) and forgery (10%) on the test set
+-  Hybrid scoring** that adjusts model predictions based on metadata integrity
+-  Comprehensive analysis**: ROC/PR curves, confusion matrix, survival rates, ablation study
+-  Computational overhead** measurement (inference time, parameter count)
+-  Modular, clean codebase** – easy to extend and reuse
 
 ---
 
@@ -135,3 +135,4 @@ Push to the branch (git push origin feature/amazing-feature)
 
 Open a Pull Request
 
+---
