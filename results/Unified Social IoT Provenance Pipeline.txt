@@ -14,63 +14,6 @@ Evaluating provenance survivability (3 transformations, 5 runs)...
 4    4            47.81             3
 Average Survivability Rate: 47.42%
 
-
-2. Running Ablation Study on Penalty Values...
-Penalty miss=0.05, forge=0.25 → AUC Det: 0.4562 | Hyb: 0.4620 | Gain: 0.0058
-Penalty miss=0.05, forge=0.3 → AUC Det: 0.4562 | Hyb: 0.4620 | Gain: 0.0058
-Penalty miss=0.05, forge=0.35 → AUC Det: 0.4562 | Hyb: 0.4620 | Gain: 0.0058
-Penalty miss=0.05, forge=0.4 → AUC Det: 0.4562 | Hyb: 0.4620 | Gain: 0.0058
-Penalty miss=0.05, forge=0.45 → AUC Det: 0.4562 | Hyb: 0.4620 | Gain: 0.0058
-Penalty miss=0.1, forge=0.25 → AUC Det: 0.4562 | Hyb: 0.4622 | Gain: 0.0060
-Penalty miss=0.1, forge=0.3 → AUC Det: 0.4562 | Hyb: 0.4622 | Gain: 0.0060
-Penalty miss=0.1, forge=0.35 → AUC Det: 0.4562 | Hyb: 0.4622 | Gain: 0.0060
-Penalty miss=0.1, forge=0.4 → AUC Det: 0.4562 | Hyb: 0.4622 | Gain: 0.0060
-Penalty miss=0.1, forge=0.45 → AUC Det: 0.4562 | Hyb: 0.4622 | Gain: 0.0060
-Penalty miss=0.15, forge=0.25 → AUC Det: 0.4562 | Hyb: 0.4624 | Gain: 0.0062
-Penalty miss=0.15, forge=0.3 → AUC Det: 0.4562 | Hyb: 0.4624 | Gain: 0.0062
-Penalty miss=0.15, forge=0.35 → AUC Det: 0.4562 | Hyb: 0.4624 | Gain: 0.0062
-Penalty miss=0.15, forge=0.4 → AUC Det: 0.4562 | Hyb: 0.4624 | Gain: 0.0062
-Penalty miss=0.15, forge=0.45 → AUC Det: 0.4562 | Hyb: 0.4624 | Gain: 0.0062
-Penalty miss=0.2, forge=0.25 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0063
-Penalty miss=0.2, forge=0.3 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0063
-Penalty miss=0.2, forge=0.35 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0063
-Penalty miss=0.2, forge=0.4 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0063
-Penalty miss=0.2, forge=0.45 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0063
-Penalty miss=0.25, forge=0.25 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0064
-Penalty miss=0.25, forge=0.3 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0064
-Penalty miss=0.25, forge=0.35 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0064
-Penalty miss=0.25, forge=0.4 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0064
-Penalty miss=0.25, forge=0.45 → AUC Det: 0.4562 | Hyb: 0.4625 | Gain: 0.0064
-
-Ablation Summary (mean across penalties):
-                                AUC_detection  AUC_hybrid      Gain
-penalty_missing penalty_forged                                     
-0.05            0.25                 0.456176    0.462002  0.005825
-                0.30                 0.456176    0.462002  0.005825
-                0.35                 0.456176    0.462002  0.005825
-                0.40                 0.456176    0.462002  0.005825
-                0.45                 0.456176    0.462002  0.005825
-0.10            0.25                 0.456176    0.462217  0.006041
-                0.30                 0.456176    0.462217  0.006041
-                0.35                 0.456176    0.462217  0.006041
-                0.40                 0.456176    0.462217  0.006041
-                0.45                 0.456176    0.462217  0.006041
-0.15            0.25                 0.456176    0.462384  0.006208
-                0.30                 0.456176    0.462384  0.006208
-                0.35                 0.456176    0.462384  0.006208
-                0.40                 0.456176    0.462384  0.006208
-                0.45                 0.456176    0.462384  0.006208
-0.20            0.25                 0.456176    0.462489  0.006312
-                0.30                 0.456176    0.462489  0.006312
-                0.35                 0.456176    0.462489  0.006312
-                0.40                 0.456176    0.462489  0.006312
-                0.45                 0.456176    0.462489  0.006312
-0.25            0.25                 0.456176    0.462537  0.006361
-                0.30                 0.456176    0.462537  0.006361
-                0.35                 0.456176    0.462537  0.006361
-                0.40                 0.456176    0.462537  0.006361
-                0.45                 0.456176    0.462537  0.006361
-
 3. Computational Overhead Analysis
 Inference time: 12.51 ms per image
 Std: 1.94 ms
@@ -93,3 +36,922 @@ You can now create tables for:
 - Hybrid vs Detection-only Performance
 
 Ready for writing Results & Analysis section.
+-----------------------------------------------------------------------------------------------
+=== STARTING FIXED PIPELINE ===
+Device: cuda
+Class mapping: {'Fake': 0, 'Real': 1}
+Training model...
+Epoch 1/5 - Loss: 294.1895
+Epoch 2/5 - Loss: 107.4347
+Epoch 3/5 - Loss: 68.3931
+Epoch 4/5 - Loss: 39.8820
+Epoch 5/5 - Loss: 35.3476
+
+Running Ablation Study...
+miss=0.05, forge=0.25 → AUC_det=0.9991, AUC_hyb=0.9969
+miss=0.05, forge=0.3 → AUC_det=0.9991, AUC_hyb=0.9969
+miss=0.05, forge=0.35 → AUC_det=0.9991, AUC_hyb=0.9969
+miss=0.05, forge=0.4 → AUC_det=0.9991, AUC_hyb=0.9969
+miss=0.05, forge=0.45 → AUC_det=0.9991, AUC_hyb=0.9969
+miss=0.1, forge=0.25 → AUC_det=0.9991, AUC_hyb=0.9969
+miss=0.1, forge=0.3 → AUC_det=0.9991, AUC_hyb=0.9969
+miss=0.1, forge=0.35 → AUC_det=0.9991, AUC_hyb=0.9969
+miss=0.1, forge=0.4 → AUC_det=0.9991, AUC_hyb=0.9969
+miss=0.1, forge=0.45 → AUC_det=0.9991, AUC_hyb=0.9969
+miss=0.15, forge=0.25 → AUC_det=0.9991, AUC_hyb=0.9971
+miss=0.15, forge=0.3 → AUC_det=0.9991, AUC_hyb=0.9971
+miss=0.15, forge=0.35 → AUC_det=0.9991, AUC_hyb=0.9971
+miss=0.15, forge=0.4 → AUC_det=0.9991, AUC_hyb=0.9971
+miss=0.15, forge=0.45 → AUC_det=0.9991, AUC_hyb=0.9971
+miss=0.2, forge=0.25 → AUC_det=0.9991, AUC_hyb=0.9972
+miss=0.2, forge=0.3 → AUC_det=0.9991, AUC_hyb=0.9972
+miss=0.2, forge=0.35 → AUC_det=0.9991, AUC_hyb=0.9972
+miss=0.2, forge=0.4 → AUC_det=0.9991, AUC_hyb=0.9972
+miss=0.2, forge=0.45 → AUC_det=0.9991, AUC_hyb=0.9972
+miss=0.25, forge=0.25 → AUC_det=0.9991, AUC_hyb=0.9981
+miss=0.25, forge=0.3 → AUC_det=0.9991, AUC_hyb=0.9981
+miss=0.25, forge=0.35 → AUC_det=0.9991, AUC_hyb=0.9981
+miss=0.25, forge=0.4 → AUC_det=0.9991, AUC_hyb=0.9981
+miss=0.25, forge=0.45 → AUC_det=0.9991, AUC_hyb=0.9981
+
+Results saved to:
+/content/ablation_results_FIXED.csv
+
+=== FINAL SUMMARY ===
+                                AUC_detection  AUC_hybrid      Gain  \
+penalty_missing penalty_forged                                        
+0.05            0.25                 0.999093    0.996914 -0.002178   
+                0.30                 0.999093    0.996914 -0.002178   
+                0.35                 0.999093    0.996914 -0.002178   
+                0.40                 0.999093    0.996914 -0.002178   
+                0.45                 0.999093    0.996914 -0.002178   
+0.10            0.25                 0.999093    0.996926 -0.002167   
+                0.30                 0.999093    0.996926 -0.002167   
+                0.35                 0.999093    0.996926 -0.002167   
+                0.40                 0.999093    0.996926 -0.002167   
+                0.45                 0.999093    0.996926 -0.002167   
+0.15            0.25                 0.999093    0.997146 -0.001947   
+                0.30                 0.999093    0.997146 -0.001947   
+                0.35                 0.999093    0.997146 -0.001947   
+                0.40                 0.999093    0.997146 -0.001947   
+                0.45                 0.999093    0.997146 -0.001947   
+0.20            0.25                 0.999093    0.997153 -0.001940   
+                0.30                 0.999093    0.997153 -0.001940   
+                0.35                 0.999093    0.997153 -0.001940   
+                0.40                 0.999093    0.997153 -0.001940   
+                0.45                 0.999093    0.997153 -0.001940   
+0.25            0.25                 0.999093    0.998083 -0.001009   
+                0.30                 0.999093    0.998083 -0.001009   
+                0.35                 0.999093    0.998083 -0.001009   
+                0.40                 0.999093    0.998083 -0.001009   
+                0.45                 0.999093    0.998083 -0.001009   
+
+                                      p_value  
+penalty_missing penalty_forged                 
+0.05            0.25             9.141062e-51  
+                0.30             9.141062e-51  
+                0.35             9.141062e-51  
+                0.40             9.141062e-51  
+                0.45             9.141062e-51  
+0.10            0.25             2.950081e-74  
+                0.30             2.950081e-74  
+                0.35             2.950081e-74  
+                0.40             2.950081e-74  
+                0.45             2.950081e-74  
+0.15            0.25            1.746730e-101  
+                0.30            1.746730e-101  
+                0.35            1.746730e-101  
+                0.40            1.746730e-101  
+                0.45            1.746730e-101  
+0.20            0.25            8.643583e-132  
+                0.30            8.643583e-132  
+                0.35            8.643583e-132  
+                0.40            8.643583e-132  
+                0.45            8.643583e-132  
+0.25            0.25            1.875184e-164  
+                0.30            1.875184e-164  
+                0.35            1.875184e-164  
+                0.40            1.875184e-164  
+                0.45            1.875184e-164  
+
+Running Speed Test...
+Inference Time: 11.20 ms
+
+=== PIPELINE COMPLETE ===
+
+---------------------------------------------
+
+
+ Setup Complete
+Using Device: cuda
+Train Samples: 9023
+Validation Samples: 1933
+Test Samples: 1934
+Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).
+
+================================================================================
+RUNNING: efficientnet_b0
+================================================================================
+
+Seed: 42
+efficientnet_b0 Epoch 1: 100%|██████████| 282/282 [01:02<00:00,  4.51it/s, loss=0.128]
+Epoch 1 | Loss=0.5287 | Val AUC=0.9840
+efficientnet_b0 Epoch 2: 100%|██████████| 282/282 [00:51<00:00,  5.43it/s, loss=0.00409]
+Epoch 2 | Loss=0.0733 | Val AUC=0.9882
+efficientnet_b0 Epoch 3: 100%|██████████| 282/282 [00:51<00:00,  5.51it/s, loss=0.214]
+Epoch 3 | Loss=0.0379 | Val AUC=0.9910
+efficientnet_b0 Epoch 4: 100%|██████████| 282/282 [00:52<00:00,  5.35it/s, loss=7.39e-5]
+Epoch 4 | Loss=0.0276 | Val AUC=0.9921
+efficientnet_b0 Epoch 5: 100%|██████████| 282/282 [00:51<00:00,  5.52it/s, loss=0.000676]
+Epoch 5 | Loss=0.0243 | Val AUC=0.9938
+efficientnet_b0 Epoch 6: 100%|██████████| 282/282 [00:51<00:00,  5.49it/s, loss=0.000301]
+Epoch 6 | Loss=0.0308 | Val AUC=0.9931
+efficientnet_b0 Epoch 7: 100%|██████████| 282/282 [00:51<00:00,  5.51it/s, loss=0.000425]
+Epoch 7 | Loss=0.0235 | Val AUC=0.9947
+efficientnet_b0 Epoch 8: 100%|██████████| 282/282 [00:51<00:00,  5.51it/s, loss=0.000115]
+Epoch 8 | Loss=0.0142 | Val AUC=0.9945
+efficientnet_b0 Epoch 9: 100%|██████████| 282/282 [00:51<00:00,  5.49it/s, loss=0.00623]
+Epoch 9 | Loss=0.0202 | Val AUC=0.9903
+efficientnet_b0 Epoch 10: 100%|██████████| 282/282 [00:51<00:00,  5.50it/s, loss=0.0142]
+Epoch 10 | Loss=0.0169 | Val AUC=0.9961
+efficientnet_b0 Epoch 11: 100%|██████████| 282/282 [00:51<00:00,  5.52it/s, loss=0.00306]
+Epoch 11 | Loss=0.0089 | Val AUC=0.9935
+efficientnet_b0 Epoch 12: 100%|██████████| 282/282 [00:51<00:00,  5.51it/s, loss=0.00341]
+Epoch 12 | Loss=0.0148 | Val AUC=0.9921
+efficientnet_b0 Epoch 13: 100%|██████████| 282/282 [00:51<00:00,  5.51it/s, loss=0.0468]
+Epoch 13 | Loss=0.0176 | Val AUC=0.9964
+efficientnet_b0 Epoch 14: 100%|██████████| 282/282 [00:51<00:00,  5.49it/s, loss=0.000575]
+Epoch 14 | Loss=0.0093 | Val AUC=0.9962
+efficientnet_b0 Epoch 15: 100%|██████████| 282/282 [00:51<00:00,  5.50it/s, loss=0.00466]
+Epoch 15 | Loss=0.0193 | Val AUC=0.9947
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98      1050
+           1       0.97      0.97      0.97       884
+
+    accuracy                           0.98      1934
+   macro avg       0.97      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98      1050
+           1       0.97      0.98      0.97       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Detection Metrics
+{'AUC': np.float64(0.9963773971126912), 'F1': 0.9728813559322034, 'Precision': 0.9717832957110609, 'Recall': 0.9739819004524887}
+
+Hybrid Metrics
+{'AUC': np.float64(0.9963817065287653), 'F1': 0.9734613212874083, 'Precision': 0.971815107102593, 'Recall': 0.9751131221719457}
+
+===== COMPUTATIONAL OVERHEAD =====
+Model: efficientnet_b0
+Parameters: 4010110
+MACs: 390.83 MMac
+FLOPs: 4.01 M
+Detection Time: 0.7326667308807373
+Provenance Time: 0.8662991523742676
+Total Hybrid Time: 1.5989658832550049
+
+===== ABLATION STUDY =====
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.83      0.90      1050
+           1       0.83      0.98      0.90       884
+
+    accuracy                           0.90      1934
+   macro avg       0.90      0.91      0.90      1934
+weighted avg       0.91      0.90      0.90      1934
+
+
+Alpha=0.5
+{'AUC': np.float64(0.9907659987071753), 'F1': 0.8987012987012987, 'Precision': 0.8309317963496637, 'Recall': 0.9785067873303167}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98      1050
+           1       0.97      0.98      0.97       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Alpha=0.65
+{'AUC': np.float64(0.9911872441284207), 'F1': 0.9734613212874083, 'Precision': 0.971815107102593, 'Recall': 0.9751131221719457}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98      1050
+           1       0.97      0.98      0.97       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Alpha=0.8
+{'AUC': np.float64(0.9924951519069166), 'F1': 0.9734613212874083, 'Precision': 0.971815107102593, 'Recall': 0.9751131221719457}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98      1050
+           1       0.97      0.97      0.97       884
+
+    accuracy                           0.98      1934
+   macro avg       0.97      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Alpha=0.9
+{'AUC': np.float64(0.9931113984055161), 'F1': 0.9728813559322034, 'Precision': 0.9717832957110609, 'Recall': 0.9739819004524887}
+Misclassified: 48
+
+Seed: 123
+efficientnet_b0 Epoch 1: 100%|██████████| 282/282 [00:51<00:00,  5.49it/s, loss=0.234]
+Epoch 1 | Loss=0.6017 | Val AUC=0.9773
+efficientnet_b0 Epoch 2: 100%|██████████| 282/282 [00:50<00:00,  5.56it/s, loss=0.0202]
+Epoch 2 | Loss=0.0927 | Val AUC=0.9850
+efficientnet_b0 Epoch 3: 100%|██████████| 282/282 [00:50<00:00,  5.54it/s, loss=0.00138]
+Epoch 3 | Loss=0.0351 | Val AUC=0.9879
+efficientnet_b0 Epoch 4: 100%|██████████| 282/282 [00:50<00:00,  5.56it/s, loss=0.00418]
+Epoch 4 | Loss=0.0211 | Val AUC=0.9906
+efficientnet_b0 Epoch 5: 100%|██████████| 282/282 [00:50<00:00,  5.55it/s, loss=0.037]
+Epoch 5 | Loss=0.0190 | Val AUC=0.9908
+efficientnet_b0 Epoch 6: 100%|██████████| 282/282 [00:50<00:00,  5.55it/s, loss=0.0638]
+Epoch 6 | Loss=0.0229 | Val AUC=0.9926
+efficientnet_b0 Epoch 7: 100%|██████████| 282/282 [00:50<00:00,  5.56it/s, loss=0.0468]
+Epoch 7 | Loss=0.0263 | Val AUC=0.9926
+efficientnet_b0 Epoch 8: 100%|██████████| 282/282 [00:50<00:00,  5.55it/s, loss=0.174]
+Epoch 8 | Loss=0.0234 | Val AUC=0.9937
+efficientnet_b0 Epoch 9: 100%|██████████| 282/282 [00:50<00:00,  5.54it/s, loss=0.000119]
+Epoch 9 | Loss=0.0189 | Val AUC=0.9923
+efficientnet_b0 Epoch 10: 100%|██████████| 282/282 [00:50<00:00,  5.54it/s, loss=0.00281]
+Epoch 10 | Loss=0.0163 | Val AUC=0.9942
+efficientnet_b0 Epoch 11: 100%|██████████| 282/282 [00:51<00:00,  5.53it/s, loss=0.0432]
+Epoch 11 | Loss=0.0153 | Val AUC=0.9939
+efficientnet_b0 Epoch 12: 100%|██████████| 282/282 [00:50<00:00,  5.56it/s, loss=0.0458]
+Epoch 12 | Loss=0.0124 | Val AUC=0.9929
+efficientnet_b0 Epoch 13: 100%|██████████| 282/282 [00:50<00:00,  5.54it/s, loss=0.000453]
+Epoch 13 | Loss=0.0161 | Val AUC=0.9929
+efficientnet_b0 Epoch 14: 100%|██████████| 282/282 [00:50<00:00,  5.53it/s, loss=1.22e-5]
+Epoch 14 | Loss=0.0079 | Val AUC=0.9956
+efficientnet_b0 Epoch 15: 100%|██████████| 282/282 [00:50<00:00,  5.55it/s, loss=3.95e-5]
+Epoch 15 | Loss=0.0026 | Val AUC=0.9951
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.98      1050
+           1       0.97      0.99      0.98       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.98      1050
+           1       0.97      0.99      0.98       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Detection Metrics
+{'AUC': np.float64(0.9983494936436113), 'F1': 0.9803260258572232, 'Precision': 0.9743016759776536, 'Recall': 0.9864253393665159}
+
+Hybrid Metrics
+{'AUC': np.float64(0.9983494936436113), 'F1': 0.9803260258572232, 'Precision': 0.9743016759776536, 'Recall': 0.9864253393665159}
+
+===== COMPUTATIONAL OVERHEAD =====
+Model: efficientnet_b0
+Parameters: 4010110
+MACs: 390.83 MMac
+FLOPs: 4.01 M
+Detection Time: 0.6665043830871582
+Provenance Time: 0.8425257205963135
+Total Hybrid Time: 1.5090301036834717
+
+===== ABLATION STUDY =====
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.99      0.83      0.90      1050
+           1       0.83      0.99      0.90       884
+
+    accuracy                           0.90      1934
+   macro avg       0.91      0.91      0.90      1934
+weighted avg       0.92      0.90      0.90      1934
+
+
+Alpha=0.5
+{'AUC': np.float64(0.9943729799612152), 'F1': 0.9022633744855967, 'Precision': 0.8273584905660377, 'Recall': 0.9920814479638009}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.98      1050
+           1       0.97      0.99      0.98       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Alpha=0.65
+{'AUC': np.float64(0.9955397543632838), 'F1': 0.9814710836608647, 'Precision': 0.9743589743589743, 'Recall': 0.9886877828054299}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.98      1050
+           1       0.97      0.99      0.98       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Alpha=0.8
+{'AUC': np.float64(0.9957196724843783), 'F1': 0.9803260258572232, 'Precision': 0.9743016759776536, 'Recall': 0.9864253393665159}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.98      1050
+           1       0.97      0.99      0.98       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Alpha=0.9
+{'AUC': np.float64(0.9965373841844429), 'F1': 0.9803260258572232, 'Precision': 0.9743016759776536, 'Recall': 0.9864253393665159}
+Misclassified: 35
+
+Seed: 456
+efficientnet_b0 Epoch 1: 100%|██████████| 282/282 [00:50<00:00,  5.55it/s, loss=0.219]
+Epoch 1 | Loss=0.6051 | Val AUC=0.9745
+efficientnet_b0 Epoch 2: 100%|██████████| 282/282 [00:50<00:00,  5.60it/s, loss=0.000231]
+Epoch 2 | Loss=0.0761 | Val AUC=0.9862
+efficientnet_b0 Epoch 3: 100%|██████████| 282/282 [00:50<00:00,  5.57it/s, loss=0.000823]
+Epoch 3 | Loss=0.0374 | Val AUC=0.9902
+efficientnet_b0 Epoch 4: 100%|██████████| 282/282 [00:50<00:00,  5.57it/s, loss=0.00135]
+Epoch 4 | Loss=0.0202 | Val AUC=0.9888
+efficientnet_b0 Epoch 5: 100%|██████████| 282/282 [00:50<00:00,  5.58it/s, loss=0.000415]
+Epoch 5 | Loss=0.0217 | Val AUC=0.9914
+efficientnet_b0 Epoch 6: 100%|██████████| 282/282 [00:50<00:00,  5.57it/s, loss=0.000768]
+Epoch 6 | Loss=0.0201 | Val AUC=0.9925
+efficientnet_b0 Epoch 7: 100%|██████████| 282/282 [00:50<00:00,  5.57it/s, loss=0.00595]
+Epoch 7 | Loss=0.0167 | Val AUC=0.9927
+efficientnet_b0 Epoch 8: 100%|██████████| 282/282 [00:50<00:00,  5.56it/s, loss=0.00135]
+Epoch 8 | Loss=0.0221 | Val AUC=0.9926
+efficientnet_b0 Epoch 9: 100%|██████████| 282/282 [00:50<00:00,  5.57it/s, loss=0.000195]
+Epoch 9 | Loss=0.0175 | Val AUC=0.9944
+efficientnet_b0 Epoch 10: 100%|██████████| 282/282 [00:50<00:00,  5.57it/s, loss=5.38e-8]
+Epoch 10 | Loss=0.0222 | Val AUC=0.9945
+efficientnet_b0 Epoch 11: 100%|██████████| 282/282 [00:50<00:00,  5.58it/s, loss=0.000494]
+Epoch 11 | Loss=0.0179 | Val AUC=0.9955
+efficientnet_b0 Epoch 12: 100%|██████████| 282/282 [00:50<00:00,  5.55it/s, loss=0.0343]
+Epoch 12 | Loss=0.0151 | Val AUC=0.9920
+efficientnet_b0 Epoch 13: 100%|██████████| 282/282 [00:50<00:00,  5.55it/s, loss=3.41e-5]
+Epoch 13 | Loss=0.0123 | Val AUC=0.9961
+efficientnet_b0 Epoch 14: 100%|██████████| 282/282 [00:50<00:00,  5.53it/s, loss=1.66e-5]
+Epoch 14 | Loss=0.0070 | Val AUC=0.9956
+efficientnet_b0 Epoch 15: 100%|██████████| 282/282 [00:51<00:00,  5.52it/s, loss=7.15e-5]
+Epoch 15 | Loss=0.0079 | Val AUC=0.9965
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.98      1050
+           1       0.96      0.98      0.97       884
+
+    accuracy                           0.97      1934
+   macro avg       0.97      0.97      0.97      1934
+weighted avg       0.97      0.97      0.97      1934
+
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.98      1050
+           1       0.96      0.98      0.97       884
+
+    accuracy                           0.97      1934
+   macro avg       0.97      0.97      0.97      1934
+weighted avg       0.97      0.97      0.97      1934
+
+
+Detection Metrics
+{'AUC': np.float64(0.99703081232493), 'F1': 0.9719416386083053, 'Precision': 0.9643652561247216, 'Recall': 0.9796380090497737}
+
+Hybrid Metrics
+{'AUC': np.float64(0.9970254255548374), 'F1': 0.9708520179372198, 'Precision': 0.9622222222222222, 'Recall': 0.9796380090497737}
+
+===== COMPUTATIONAL OVERHEAD =====
+Model: efficientnet_b0
+Parameters: 4010110
+MACs: 390.83 MMac
+FLOPs: 4.01 M
+Detection Time: 0.6514790058135986
+Provenance Time: 0.7782104015350342
+Total Hybrid Time: 1.4296894073486328
+
+===== ABLATION STUDY =====
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.87      0.92      1050
+           1       0.86      0.98      0.92       884
+
+    accuracy                           0.92      1934
+   macro avg       0.92      0.93      0.92      1934
+weighted avg       0.93      0.92      0.92      1934
+
+
+Alpha=0.5
+{'AUC': np.float64(0.9891720534367593), 'F1': 0.9200635256749603, 'Precision': 0.8646766169154229, 'Recall': 0.9830316742081447}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.97      1050
+           1       0.96      0.98      0.97       884
+
+    accuracy                           0.97      1934
+   macro avg       0.97      0.97      0.97      1934
+weighted avg       0.97      0.97      0.97      1934
+
+
+Alpha=0.65
+{'AUC': np.float64(0.9905209006679595), 'F1': 0.970341354224958, 'Precision': 0.9601328903654485, 'Recall': 0.9807692307692307}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.98      1050
+           1       0.96      0.98      0.97       884
+
+    accuracy                           0.97      1934
+   macro avg       0.97      0.97      0.97      1934
+weighted avg       0.97      0.97      0.97      1934
+
+
+Alpha=0.8
+{'AUC': np.float64(0.9909184443007973), 'F1': 0.9708520179372198, 'Precision': 0.9622222222222222, 'Recall': 0.9796380090497737}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.98      1050
+           1       0.96      0.98      0.97       884
+
+    accuracy                           0.97      1934
+   macro avg       0.97      0.97      0.97      1934
+weighted avg       0.97      0.97      0.97      1934
+
+
+Alpha=0.9
+{'AUC': np.float64(0.9935180995475114), 'F1': 0.9719416386083053, 'Precision': 0.9643652561247216, 'Recall': 0.9796380090497737}
+Misclassified: 50
+
+===== STATISTICAL TEST =====
+T-statistic: 0.12803687992413582
+P-value: 0.9098330365393758
+Not Significant
+
+FINAL RESULTS
+Detection Mean AUC: 0.9973 ± 0.0008
+Hybrid Mean AUC: 0.9973 ± 0.0008
+
+================================================================================
+RUNNING: resnet50
+================================================================================
+
+Seed: 42
+model.safetensors: 100%
+ 102M/102M [00:02<00:00, 58.5MB/s]
+resnet50 Epoch 1: 100%|██████████| 282/282 [01:47<00:00,  2.62it/s, loss=0.178]
+Epoch 1 | Loss=0.4653 | Val AUC=0.9643
+resnet50 Epoch 2: 100%|██████████| 282/282 [01:46<00:00,  2.64it/s, loss=0.0906]
+Epoch 2 | Loss=0.1530 | Val AUC=0.9902
+resnet50 Epoch 3: 100%|██████████| 282/282 [01:46<00:00,  2.64it/s, loss=0.0223]
+Epoch 3 | Loss=0.0560 | Val AUC=0.9923
+resnet50 Epoch 4: 100%|██████████| 282/282 [01:47<00:00,  2.63it/s, loss=0.0422]
+Epoch 4 | Loss=0.0363 | Val AUC=0.9939
+resnet50 Epoch 5: 100%|██████████| 282/282 [01:47<00:00,  2.63it/s, loss=0.0102]
+Epoch 5 | Loss=0.0160 | Val AUC=0.9933
+resnet50 Epoch 6: 100%|██████████| 282/282 [01:47<00:00,  2.63it/s, loss=0.0216]
+Epoch 6 | Loss=0.0146 | Val AUC=0.9944
+resnet50 Epoch 7: 100%|██████████| 282/282 [01:47<00:00,  2.63it/s, loss=0.00559]
+Epoch 7 | Loss=0.0120 | Val AUC=0.9936
+resnet50 Epoch 8: 100%|██████████| 282/282 [01:46<00:00,  2.64it/s, loss=0.0212]
+Epoch 8 | Loss=0.0128 | Val AUC=0.9941
+resnet50 Epoch 9: 100%|██████████| 282/282 [01:47<00:00,  2.64it/s, loss=0.00521]
+Epoch 9 | Loss=0.0143 | Val AUC=0.9962
+resnet50 Epoch 10: 100%|██████████| 282/282 [01:46<00:00,  2.64it/s, loss=0.0193]
+Epoch 10 | Loss=0.0078 | Val AUC=0.9954
+resnet50 Epoch 11: 100%|██████████| 282/282 [01:47<00:00,  2.63it/s, loss=0.000457]
+Epoch 11 | Loss=0.0080 | Val AUC=0.9958
+resnet50 Epoch 12: 100%|██████████| 282/282 [01:46<00:00,  2.65it/s, loss=0.00101]
+Epoch 12 | Loss=0.0073 | Val AUC=0.9961
+resnet50 Epoch 13: 100%|██████████| 282/282 [01:44<00:00,  2.70it/s, loss=0.00116]
+Epoch 13 | Loss=0.0056 | Val AUC=0.9970
+resnet50 Epoch 14: 100%|██████████| 282/282 [01:44<00:00,  2.71it/s, loss=0.000244]
+Epoch 14 | Loss=0.0050 | Val AUC=0.9970
+resnet50 Epoch 15: 100%|██████████| 282/282 [01:46<00:00,  2.64it/s, loss=0.00204]
+Epoch 15 | Loss=0.0024 | Val AUC=0.9969
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.98      1050
+           1       0.96      0.98      0.97       884
+
+    accuracy                           0.97      1934
+   macro avg       0.97      0.98      0.97      1934
+weighted avg       0.97      0.97      0.97      1934
+
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.98      1050
+           1       0.96      0.98      0.97       884
+
+    accuracy                           0.97      1934
+   macro avg       0.97      0.98      0.97      1934
+weighted avg       0.97      0.97      0.97      1934
+
+
+Detection Metrics
+{'AUC': np.float64(0.9961947856065504), 'F1': 0.9725182277061133, 'Precision': 0.96440489432703, 'Recall': 0.9807692307692307}
+
+Hybrid Metrics
+{'AUC': np.float64(0.9961872441284206), 'F1': 0.9725182277061133, 'Precision': 0.96440489432703, 'Recall': 0.9807692307692307}
+
+===== COMPUTATIONAL OVERHEAD =====
+Model: resnet50
+Parameters: 23512130
+MACs: 4.13 GMac
+FLOPs: 23.51 M
+Detection Time: 0.5031225681304932
+Provenance Time: 0.8656861782073975
+Total Hybrid Time: 1.3688087463378906
+
+===== ABLATION STUDY =====
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.78      0.87      1050
+           1       0.79      0.98      0.87       884
+
+    accuracy                           0.87      1934
+   macro avg       0.88      0.88      0.87      1934
+weighted avg       0.89      0.87      0.87      1934
+
+
+Alpha=0.5
+{'AUC': np.float64(0.9878576815341521), 'F1': 0.8746854554604933, 'Precision': 0.7878513145965549, 'Recall': 0.9830316742081447}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.98      1050
+           1       0.96      0.98      0.97       884
+
+    accuracy                           0.97      1934
+   macro avg       0.97      0.98      0.97      1934
+weighted avg       0.97      0.97      0.97      1934
+
+
+Alpha=0.65
+{'AUC': np.float64(0.991072505925447), 'F1': 0.9725490196078431, 'Precision': 0.9633740288568258, 'Recall': 0.9819004524886877}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.98      1050
+           1       0.96      0.98      0.97       884
+
+    accuracy                           0.97      1934
+   macro avg       0.97      0.98      0.97      1934
+weighted avg       0.97      0.97      0.97      1934
+
+
+Alpha=0.8
+{'AUC': np.float64(0.9928555268261152), 'F1': 0.9725182277061133, 'Precision': 0.96440489432703, 'Recall': 0.9807692307692307}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.98      1050
+           1       0.96      0.98      0.97       884
+
+    accuracy                           0.97      1934
+   macro avg       0.97      0.98      0.97      1934
+weighted avg       0.97      0.97      0.97      1934
+
+
+Alpha=0.9
+{'AUC': np.float64(0.9931000861883216), 'F1': 0.9725182277061133, 'Precision': 0.96440489432703, 'Recall': 0.9807692307692307}
+Misclassified: 49
+
+Seed: 123
+resnet50 Epoch 1: 100%|██████████| 282/282 [01:47<00:00,  2.62it/s, loss=0.187]
+Epoch 1 | Loss=0.4694 | Val AUC=0.9720
+resnet50 Epoch 2: 100%|██████████| 282/282 [01:45<00:00,  2.67it/s, loss=0.0444]
+Epoch 2 | Loss=0.1616 | Val AUC=0.9914
+resnet50 Epoch 3: 100%|██████████| 282/282 [01:44<00:00,  2.70it/s, loss=0.0482]
+Epoch 3 | Loss=0.0540 | Val AUC=0.9943
+resnet50 Epoch 4: 100%|██████████| 282/282 [01:46<00:00,  2.65it/s, loss=0.0107]
+Epoch 4 | Loss=0.0342 | Val AUC=0.9948
+resnet50 Epoch 5: 100%|██████████| 282/282 [01:47<00:00,  2.62it/s, loss=0.00375]
+Epoch 5 | Loss=0.0173 | Val AUC=0.9959
+resnet50 Epoch 6: 100%|██████████| 282/282 [01:47<00:00,  2.63it/s, loss=0.00858]
+Epoch 6 | Loss=0.0189 | Val AUC=0.9961
+resnet50 Epoch 7: 100%|██████████| 282/282 [01:45<00:00,  2.68it/s, loss=0.0253]
+Epoch 7 | Loss=0.0107 | Val AUC=0.9965
+resnet50 Epoch 8: 100%|██████████| 282/282 [01:46<00:00,  2.65it/s, loss=0.00415]
+Epoch 8 | Loss=0.0048 | Val AUC=0.9959
+resnet50 Epoch 9: 100%|██████████| 282/282 [01:47<00:00,  2.62it/s, loss=0.00688]
+Epoch 9 | Loss=0.0079 | Val AUC=0.9958
+resnet50 Epoch 10: 100%|██████████| 282/282 [01:47<00:00,  2.63it/s, loss=0.00278]
+Epoch 10 | Loss=0.0127 | Val AUC=0.9953
+resnet50 Epoch 11: 100%|██████████| 282/282 [01:47<00:00,  2.63it/s, loss=0.000896]
+Epoch 11 | Loss=0.0053 | Val AUC=0.9973
+resnet50 Epoch 12: 100%|██████████| 282/282 [01:47<00:00,  2.62it/s, loss=0.000339]
+Epoch 12 | Loss=0.0036 | Val AUC=0.9975
+resnet50 Epoch 13: 100%|██████████| 282/282 [01:47<00:00,  2.63it/s, loss=0.00022]
+Epoch 13 | Loss=0.0038 | Val AUC=0.9972
+resnet50 Epoch 14: 100%|██████████| 282/282 [01:46<00:00,  2.66it/s, loss=0.000229]
+Epoch 14 | Loss=0.0033 | Val AUC=0.9974
+resnet50 Epoch 15: 100%|██████████| 282/282 [01:44<00:00,  2.69it/s, loss=0.00031]
+Epoch 15 | Loss=0.0011 | Val AUC=0.9975
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.99      0.97      0.98      1050
+           1       0.97      0.98      0.98       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.99      0.97      0.98      1050
+           1       0.97      0.98      0.98       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Detection Metrics
+{'AUC': np.float64(0.9971999569058393), 'F1': 0.975883342680875, 'Precision': 0.967741935483871, 'Recall': 0.9841628959276018}
+
+Hybrid Metrics
+{'AUC': np.float64(0.9972042663219134), 'F1': 0.975883342680875, 'Precision': 0.967741935483871, 'Recall': 0.9841628959276018}
+
+===== COMPUTATIONAL OVERHEAD =====
+Model: resnet50
+Parameters: 23512130
+MACs: 4.13 GMac
+FLOPs: 23.51 M
+Detection Time: 0.4618692398071289
+Provenance Time: 0.7492315769195557
+Total Hybrid Time: 1.2111008167266846
+
+===== ABLATION STUDY =====
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.78      0.87      1050
+           1       0.79      0.99      0.88       884
+
+    accuracy                           0.87      1934
+   macro avg       0.89      0.88      0.87      1934
+weighted avg       0.89      0.87      0.87      1934
+
+
+Alpha=0.5
+{'AUC': np.float64(0.9914037922861453), 'F1': 0.8758169934640523, 'Precision': 0.788235294117647, 'Recall': 0.9852941176470589}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.99      0.97      0.98      1050
+           1       0.97      0.98      0.98       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Alpha=0.65
+{'AUC': np.float64(0.992999353587589), 'F1': 0.975883342680875, 'Precision': 0.967741935483871, 'Recall': 0.9841628959276018}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.99      0.97      0.98      1050
+           1       0.97      0.98      0.98       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Alpha=0.8
+{'AUC': np.float64(0.9934065934065934), 'F1': 0.975883342680875, 'Precision': 0.967741935483871, 'Recall': 0.9841628959276018}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.99      0.97      0.98      1050
+           1       0.97      0.98      0.98       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Alpha=0.9
+{'AUC': np.float64(0.9940476190476191), 'F1': 0.975883342680875, 'Precision': 0.967741935483871, 'Recall': 0.9841628959276018}
+Misclassified: 43
+
+Seed: 456
+resnet50 Epoch 1: 100%|██████████| 282/282 [01:47<00:00,  2.62it/s, loss=0.252]
+Epoch 1 | Loss=0.4711 | Val AUC=0.9713
+resnet50 Epoch 2: 100%|██████████| 282/282 [01:46<00:00,  2.64it/s, loss=0.228]
+Epoch 2 | Loss=0.1503 | Val AUC=0.9898
+resnet50 Epoch 3: 100%|██████████| 282/282 [01:46<00:00,  2.64it/s, loss=0.088]
+Epoch 3 | Loss=0.0624 | Val AUC=0.9919
+resnet50 Epoch 4: 100%|██████████| 282/282 [01:47<00:00,  2.63it/s, loss=0.0468]
+Epoch 4 | Loss=0.0266 | Val AUC=0.9952
+resnet50 Epoch 5: 100%|██████████| 282/282 [01:46<00:00,  2.64it/s, loss=0.00744]
+Epoch 5 | Loss=0.0178 | Val AUC=0.9946
+resnet50 Epoch 6: 100%|██████████| 282/282 [01:44<00:00,  2.69it/s, loss=0.0089]
+Epoch 6 | Loss=0.0150 | Val AUC=0.9947
+resnet50 Epoch 7: 100%|██████████| 282/282 [01:44<00:00,  2.70it/s, loss=0.00112]
+Epoch 7 | Loss=0.0090 | Val AUC=0.9937
+resnet50 Epoch 8: 100%|██████████| 282/282 [01:44<00:00,  2.70it/s, loss=0.00206]
+Epoch 8 | Loss=0.0091 | Val AUC=0.9961
+resnet50 Epoch 9: 100%|██████████| 282/282 [01:43<00:00,  2.72it/s, loss=0.000645]
+Epoch 9 | Loss=0.0075 | Val AUC=0.9957
+resnet50 Epoch 10: 100%|██████████| 282/282 [01:44<00:00,  2.71it/s, loss=0.00276]
+Epoch 10 | Loss=0.0067 | Val AUC=0.9968
+resnet50 Epoch 11: 100%|██████████| 282/282 [01:43<00:00,  2.72it/s, loss=0.000605]
+Epoch 11 | Loss=0.0039 | Val AUC=0.9967
+resnet50 Epoch 12: 100%|██████████| 282/282 [01:43<00:00,  2.72it/s, loss=0.000525]
+Epoch 12 | Loss=0.0025 | Val AUC=0.9965
+resnet50 Epoch 13: 100%|██████████| 282/282 [01:43<00:00,  2.73it/s, loss=0.00914]
+Epoch 13 | Loss=0.0043 | Val AUC=0.9964
+resnet50 Epoch 14: 100%|██████████| 282/282 [01:43<00:00,  2.73it/s, loss=6.73e-5]
+Epoch 14 | Loss=0.0024 | Val AUC=0.9968
+resnet50 Epoch 15: 100%|██████████| 282/282 [01:43<00:00,  2.73it/s, loss=0.00107]
+Epoch 15 | Loss=0.0035 | Val AUC=0.9964
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98      1050
+           1       0.98      0.97      0.97       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98      1050
+           1       0.97      0.97      0.97       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Detection Metrics
+{'AUC': np.float64(0.9967226890756303), 'F1': 0.9745042492917847, 'Precision': 0.9761634506242906, 'Recall': 0.9728506787330317}
+
+Hybrid Metrics
+{'AUC': np.float64(0.9966957552251671), 'F1': 0.9734313171283211, 'Precision': 0.9728813559322034, 'Recall': 0.9739819004524887}
+
+===== COMPUTATIONAL OVERHEAD =====
+Model: resnet50
+Parameters: 23512130
+MACs: 4.13 GMac
+FLOPs: 23.51 M
+Detection Time: 0.45519542694091797
+Provenance Time: 0.7892365455627441
+Total Hybrid Time: 1.244431972503662
+
+===== ABLATION STUDY =====
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.78      0.87      1050
+           1       0.79      0.98      0.87       884
+
+    accuracy                           0.87      1934
+   macro avg       0.88      0.88      0.87      1934
+weighted avg       0.89      0.87      0.87      1934
+
+
+Alpha=0.5
+{'AUC': np.float64(0.9905311355311356), 'F1': 0.8739240506329113, 'Precision': 0.7910174152153987, 'Recall': 0.9762443438914027}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98      1050
+           1       0.97      0.97      0.97       884
+
+    accuracy                           0.97      1934
+   macro avg       0.97      0.97      0.97      1934
+weighted avg       0.97      0.97      0.97      1934
+
+
+Alpha=0.65
+{'AUC': np.float64(0.9914932126696833), 'F1': 0.9723320158102767, 'Precision': 0.9706877113866967, 'Recall': 0.9739819004524887}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98      1050
+           1       0.97      0.97      0.97       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Alpha=0.8
+{'AUC': np.float64(0.9925393234216764), 'F1': 0.9734313171283211, 'Precision': 0.9728813559322034, 'Recall': 0.9739819004524887}
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98      1050
+           1       0.97      0.97      0.97       884
+
+    accuracy                           0.98      1934
+   macro avg       0.98      0.98      0.98      1934
+weighted avg       0.98      0.98      0.98      1934
+
+
+Alpha=0.9
+{'AUC': np.float64(0.9936468433527258), 'F1': 0.9734012450481041, 'Precision': 0.9739524348810872, 'Recall': 0.9728506787330317}
+Misclassified: 45
+
+===== STATISTICAL TEST =====
+T-statistic: 1.1042122094185327
+P-value: 0.3845782248294236
+Not Significant
+
+FINAL RESULTS
+Detection Mean AUC: 0.9967 ± 0.0004
+Hybrid Mean AUC: 0.9967 ± 0.0004
+
+ FULL PIPELINE COMPLETED
+Saved Outputs:
+- Learning Curves
+- ROC Curves
+- PR Curves
+- Confusion Matrices
+- Grad-CAM Visualizations
+- Error Analysis
+- Ablation CSV
+- Final Results CSV
