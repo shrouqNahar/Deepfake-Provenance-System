@@ -955,3 +955,160 @@ Saved Outputs:
 - Error Analysis
 - Ablation CSV
 - Final Results CSV
+
+# ===================CROSS-DATASET EVALUATION=================
+# Model:RESNET50 Dataset:celebdf-v2image-dataset
+# =================Final_results===============================
+
+===============================================================
+ STARTING PIPELINE FOR ARCHITECTURE: RESNET50
+==============================================================
+
+ Running Experiment with Seed: 42
+-> Building model architecture: resnet50...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+model.safetensors: 100%
+ 102M/102M [00:04<00:00, 33.6MB/s]
+-> Starting training loop for resnet50...
+Epoch 1/15: 100%|██████████| 2526/2526 [01:56<00:00, 21.75it/s]
+Epoch 2/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.01it/s]
+Epoch 3/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.13it/s]
+Epoch 4/15: 100%|██████████| 2526/2526 [01:55<00:00, 21.84it/s]
+Epoch 5/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.02it/s]
+Epoch 6/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.09it/s]
+Epoch 7/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.12it/s]
+Epoch 8/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.01it/s]
+Epoch 9/15: 100%|██████████| 2526/2526 [01:56<00:00, 21.77it/s]
+Epoch 10/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.11it/s]
+Epoch 11/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.12it/s]
+Epoch 12/15: 100%|██████████| 2526/2526 [01:54<00:00, 21.97it/s]
+Epoch 13/15: 100%|██████████| 2526/2526 [01:54<00:00, 21.99it/s]
+Epoch 14/15: 100%|██████████| 2526/2526 [01:56<00:00, 21.67it/s]
+Epoch 15/15: 100%|██████████| 2526/2526 [01:56<00:00, 21.67it/s]
+-> Running Full Evaluation on Test Set for resnet50 (Seed 42)...
+Experiment Results | Det AUC: 0.9998 | Hybrid AUC: 0.9998
+
+Running Experiment with Seed: 123
+-> Building model architecture: resnet50...
+-> Starting training loop for resnet50...
+Epoch 1/15: 100%|██████████| 2526/2526 [01:53<00:00, 22.19it/s]
+Epoch 2/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.26it/s]
+Epoch 3/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.32it/s]
+Epoch 4/15: 100%|██████████| 2526/2526 [01:59<00:00, 21.18it/s]
+Epoch 5/15: 100%|██████████| 2526/2526 [01:59<00:00, 21.13it/s]
+Epoch 6/15: 100%|██████████| 2526/2526 [01:59<00:00, 21.10it/s]
+Epoch 7/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.47it/s]
+Epoch 8/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.10it/s]
+Epoch 9/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.15it/s]
+Epoch 10/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.04it/s]
+Epoch 11/15: 100%|██████████| 2526/2526 [01:54<00:00, 21.97it/s]
+Epoch 12/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.01it/s]
+Epoch 13/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.13it/s]
+Epoch 14/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.11it/s]
+Epoch 15/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.13it/s]
+-> Running Full Evaluation on Test Set for resnet50 (Seed 123)...
+Experiment Results | Det AUC: 0.9999 | Hybrid AUC: 0.9999
+
+ Running Experiment with Seed: 456
+-> Building model architecture: resnet50...
+-> Starting training loop for resnet50...
+Epoch 1/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.11it/s]
+Epoch 2/15: 100%|██████████| 2526/2526 [01:53<00:00, 22.17it/s]
+Epoch 3/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.11it/s]
+Epoch 4/15: 100%|██████████| 2526/2526 [01:53<00:00, 22.19it/s]
+Epoch 5/15: 100%|██████████| 2526/2526 [01:53<00:00, 22.21it/s]
+Epoch 6/15: 100%|██████████| 2526/2526 [01:54<00:00, 22.12it/s]
+Epoch 7/15: 100%|██████████| 2526/2526 [01:53<00:00, 22.16it/s]
+Epoch 8/15: 100%|██████████| 2526/2526 [01:53<00:00, 22.18it/s]
+Epoch 9/15: 100%|██████████| 2526/2526 [01:53<00:00, 22.22it/s]
+Epoch 10/15: 100%|██████████| 2526/2526 [01:53<00:00, 22.19it/s]
+Epoch 11/15: 100%|██████████| 2526/2526 [01:53<00:00, 22.16it/s]
+Epoch 12/15: 100%|██████████| 2526/2526 [01:53<00:00, 22.20it/s]
+Epoch 13/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.54it/s]
+Epoch 14/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.33it/s]
+Epoch 15/15: 100%|██████████| 2526/2526 [01:55<00:00, 21.81it/s]
+-> Running Full Evaluation on Test Set for resnet50 (Seed 456)...
+Experiment Results | Det AUC: 0.9999 | Hybrid AUC: 0.9999
+
+
+# ===================CROSS-DATASET EVALUATION=================
+
+# ======Model:RESNET50 Dataset:celebdf-v2image-dataset========
+
+# =================Final_results===============================
+
+
+==========================================================================================
+ STARTING PIPELINE FOR ARCHITECTURE: EFFICIENTNET_B0
+==========================================================================================
+
+Running Experiment with Seed: 42
+-> Building model architecture: efficientnet_b0...
+model.safetensors: 100%
+ 21.4M/21.4M [00:02<00:00, 106MB/s]
+-> Starting training loop for efficientnet_b0...
+Epoch 1/15: 100%|██████████| 2526/2526 [02:00<00:00, 21.00it/s]
+Epoch 2/15: 100%|██████████| 2526/2526 [02:02<00:00, 20.56it/s]
+Epoch 3/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.40it/s]
+Epoch 4/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.24it/s]
+Epoch 5/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.33it/s]
+Epoch 6/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.30it/s]
+Epoch 7/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.35it/s]
+Epoch 8/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.28it/s]
+Epoch 9/15: 100%|██████████| 2526/2526 [01:59<00:00, 21.21it/s]
+Epoch 10/15: 100%|██████████| 2526/2526 [01:59<00:00, 21.21it/s]
+Epoch 11/15: 100%|██████████| 2526/2526 [01:59<00:00, 21.13it/s]
+Epoch 12/15: 100%|██████████| 2526/2526 [01:59<00:00, 21.18it/s]
+Epoch 13/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.47it/s]
+Epoch 14/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.31it/s]
+Epoch 15/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.47it/s]
+-> Running Full Evaluation on Test Set for efficientnet_b0 (Seed 42)...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Experiment Results | Det AUC: 0.9993 | Hybrid AUC: 0.9993
+
+Running Experiment with Seed: 123
+-> Building model architecture: efficientnet_b0...
+-> Starting training loop for efficientnet_b0...
+Epoch 1/15: 100%|██████████| 2526/2526 [01:59<00:00, 21.13it/s]
+Epoch 2/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.50it/s]
+Epoch 3/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.31it/s]
+Epoch 4/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.39it/s]
+Epoch 5/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.57it/s]
+Epoch 6/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.43it/s]
+Epoch 7/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.30it/s]
+Epoch 8/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.48it/s]
+Epoch 9/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.26it/s]
+Epoch 10/15: 100%|██████████| 2526/2526 [01:56<00:00, 21.62it/s]
+Epoch 11/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.28it/s]
+Epoch 12/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.36it/s]
+Epoch 13/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.47it/s]
+Epoch 14/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.31it/s]
+Epoch 15/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.54it/s]
+-> Running Full Evaluation on Test Set for efficientnet_b0 (Seed 123)...
+Experiment Results | Det AUC: 0.9999 | Hybrid AUC: 0.9999
+
+Running Experiment with Seed: 456
+-> Building model architecture: efficientnet_b0...
+-> Starting training loop for efficientnet_b0...
+Epoch 1/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.31it/s]
+Epoch 2/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.50it/s]
+Epoch 3/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.44it/s]
+Epoch 4/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.38it/s]
+Epoch 5/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.33it/s]
+Epoch 6/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.23it/s]
+Epoch 7/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.54it/s]
+Epoch 8/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.31it/s]
+Epoch 9/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.47it/s]
+Epoch 10/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.45it/s]
+Epoch 11/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.33it/s]
+Epoch 12/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.52it/s]
+Epoch 13/15: 100%|██████████| 2526/2526 [01:56<00:00, 21.63it/s]
+Epoch 14/15: 100%|██████████| 2526/2526 [01:58<00:00, 21.32it/s]
+Epoch 15/15: 100%|██████████| 2526/2526 [01:57<00:00, 21.48it/s]
+-> Running Full Evaluation on Test Set for efficientnet_b0 (Seed 456)...
+Experiment Results | Det AUC: 0.9999 | Hybrid AUC: 0.9999
+
+FULL PIPELINE COMPLETED WITH CROSS-DATASET EVALUATION!
+
